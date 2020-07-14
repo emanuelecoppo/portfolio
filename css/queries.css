@@ -1,0 +1,84 @@
+@media only screen and (max-width: 1280px) {
+  :root {
+    --margin: calc(-25.6px + 12.0vw); /* 10vw on 1280, 4vw on 320 */
+    --border: calc(0.9px + 0.1vw); /* 0.2vw on 1280, 0.4vw on 320 */;
+  }
+  h3 {
+    margin-bottom: calc(5.5px + 0.3vw); /* 0.7vw on 1280, 2vw on 320 */
+  }
+  p, h3, span, #nav a {
+    font-size: calc(10.7px + 0.7vw); /* 1.5vw on 1280, 4vw on 320 */
+  }
+  p {
+  	margin-bottom: calc(18.3px + -0.7vw); /* 0.7vw on 1280, 5vw on 320 */
+  }
+  h1 {
+    margin-bottom: calc(12.8px + 1.0vw); /* 2vw on 1280, 5vw on 320 */
+  }
+  .title {
+  	margin-top: calc(46.9px + 10.3vw); /* 14vw on 1280, 25vw on 320 */
+  	margin-bottom: calc(25.6px + 4.0vw); /* 6vw on 1280, 12vw on 320 */
+  }
+  .title span {
+  	margin-left: calc(4.3px + 0.7vw); /* 1vw on 1280, 2vw on 320 */
+  }
+  .next {
+  	font-size: calc(8.5px + 4.3vw); /* 5vw on 1280, 7vw on 320 */
+  }
+  .next, #footer {
+    margin-top: calc(21.3px + 0.3vw); /* 2vw on 1280, 7vw on 320 */
+  }
+  #nav {
+    padding: calc(6.4px + 1.0vw) /* 1.5vw on 1280, 3vw on 320 */ 0;
+    width: calc(100vw - 2*var(--margin));
+  }
+  .description {
+  	margin: calc(25.6px + 4.0vw) /* 6vw on 1280, 12vw on 320 */ 0;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .column-2:not(.frz) {
+    flex-basis: 100%;
+  }
+  .column-3:not(.frz) {
+    flex-basis: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: calc(23.6px + 2.6vw); /* 6vw on 700, 10vw on 320 */
+  }
+}
+@media only screen and (max-width: 700px) and (min-height: 400px) {
+  #hello > *:not(.psyduck), #bio > *:not(.profile) {
+  	flex-basis: 100%;
+  }
+  .psyduck {
+  	width: calc(58.9px + 3.6vw); /* 12vw on 700, 22vw on 320 */
+  	height: calc(58.9px + 3.6vw); /* 12vw on 700, 22vw on 320 */
+  	margin: 5vw 0;
+    order: 1;
+  }
+  .profile {
+    width: calc(41.3px + 9.1vw); /* 15vw on 700, 22vw on 320 */
+    height: calc(41.3px + 9.1vw); /* 15vw on 700, 22vw on 320 */
+    margin-bottom: 5vw;
+    order: 1;
+  }
+  #hello h1, #bio p {
+    order: 2;
+  }
+  #hello p, #bio h3 {
+    order: 3;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+    .project::before, .project:hover::before {
+      top: 74%;
+    }
+}
+/*--------------------FIX FOR LARGER FONTS--------------------*/
+p, span, #nav a {
+  line-height: 1.15;
+  letter-spacing: -.03em;
+}

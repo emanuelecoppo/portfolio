@@ -1,0 +1,229 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --grid: 3vw;
+  --margin: 10vw;
+  --border: .2vw;
+}
+/*--------------------FONTS--------------------*/
+@font-face {font-style: normal; font-weight: normal; font-family: myFont; src: url(../fonts/HelveticaNowText-Regular.woff);}
+@font-face {font-style: normal; font-weight: bold;   font-family: myFont; src: url(../fonts/HelveticaNowText-Bold.woff);}
+@font-face {font-style: italic; font-weight: normal; font-family: myFont; src: url(../fonts/HelveticaNowText-RegularItalic.woff);}
+@font-face {font-style: italic; font-weight: bold;   font-family: myFont; src: url(../fonts/HelveticaNowText-BoldItalic.woff);}
+/*--------------------BROWSER--------------------*/
+::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+html {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+::selection {
+    background-color: var(--black);
+    color: var(--white);
+}
+/*--------------------GENERAL--------------------*/
+*  {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  color: var(--black);
+}
+body {
+  font-family: "myFont", Helvetica, Arial, sans-serif;
+  background-color: var(--white);
+  margin: 0 var(--margin) 8vw var(--margin);
+}
+h1 {
+	font-weight: bold;
+	font-size: 7vw;
+	line-height: .85;
+}
+h3 {
+	font-weight: bold;
+	margin-bottom: .7vw;
+}
+p, h3, span, #nav a {
+  font-size: 1.5vw;
+}
+p, h1 {
+	margin-bottom: 2vw;
+}
+.title {
+	margin-top: 14vw;
+	margin-bottom: 6vw;
+}
+.title span {
+	font-weight: normal;
+	margin-left: 1vw;
+}
+/*--------------------LINKS--------------------*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+	cursor: pointer;
+}
+.underline {
+	position: relative;
+  transition: color .2s ease-in-out;
+}
+.underline:hover {
+	color: var(--white);
+}
+.underline::after {
+	content: "";
+	background-color: var(--black);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 6%;
+  transition: height .2s ease-in-out;
+  z-index: -1;
+}
+.underline:hover::after {
+	height: 100%;
+}
+.next {
+	font-weight: bold;
+	font-size: 5vw;
+}
+.next, #footer {
+  display: inline-block; /* Fix for margin collapse */
+  margin-top: 2vw;
+}
+/*--------------------NAV--------------------*/
+#nav {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  padding: 1.5vw 0;
+  width: 80vw;
+  user-select: none;
+  background-color: var(--white);
+  border-bottom: solid var(--border) var(--black);
+  /* box-shadow: 0 -.4vw 0 .4vw var(--white); */
+}
+#nav a:not(:first-child) {
+  margin-left: 3vw;
+}
+/*--------------------IMAGES--------------------*/
+.project, .image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+.project, .image, .vimeo {
+	background-color: var(--black);
+  border: solid var(--border) var(--black);
+  user-select: none;
+}
+.trasp {
+  background-color: initial;
+  border: none;
+}
+.project {
+	height: 40vw;
+	margin-bottom: var(--grid);
+	overflow: hidden;
+  position: relative;
+}
+.project::before {
+	content: attr(titolo);
+	position: absolute;
+  display: flex; /* Fix for mobile */
+	top: 100%;
+	left: 3%;
+	background-color: var(--black);
+	color: var(--white);
+	font-size: 5vw;
+	font-weight: bold;
+	padding: 1vw;
+	transition: top .2s ease-in-out;
+}
+.project:hover::before {
+	top: 76%;
+}
+.image, .vimeo {
+	margin-bottom: var(--grid);
+}
+.vimeo {
+	position: relative;
+}
+.vimeo iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.description {
+	margin: 6vw 0;
+}
+/*--------------------FLEX--------------------*/
+.gallery {
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.column-2 {
+	flex-basis: calc(50% - var(--grid)/2);
+}
+.column-3 {
+	flex-basis: calc(33.33% - var(--grid)/1.5);
+}
+.image img, .image video {
+  width: 100%;
+  display: block;
+}
+/*--------------------SPECIFIC--------------------*/
+.zeptepi {
+  background-color: #3278ff;
+}
+/*--------------------HOME--------------------*/
+#home {
+	height: 100vh;
+  min-height: 250px;
+	position: relative;
+}
+#hello {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#hello, #bio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#hello h1 {
+	flex-basis: 80%;
+}
+#bio p {
+  flex-basis: 75%;
+}
+.psyduck {
+	width: 12vw;
+	height: 12vw;
+	margin: 0;
+}
+.profile {
+  width: 15vw;
+  height: 15vw;
+  margin: 0;
+}
+#selected-works {
+	position: absolute;
+	bottom: 2vw;
+}
+audio {
+  display: none !important;
+}
+/*--------------------FOOTER--------------------*/
+#footer p, #contact p {
+	margin-bottom: 1vw;
+}
