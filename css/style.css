@@ -206,6 +206,9 @@ a:hover {
 #bio p {
   flex-basis: 75%;
 }
+#bio h3 {
+  flex-basis: 100%;
+}
 .psyduck {
 	width: 12vw;
 	height: 12vw;
